@@ -39,4 +39,4 @@ mlartifacts/
 .ipynb_checkpoints/
 
 # DVC
-/models/recommendation_model.pkl
+/models/recommendation_model.pkl.setup_complete

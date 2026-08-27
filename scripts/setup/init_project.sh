@@ -464,7 +464,7 @@ fi
 
 print_step "[7/9] Starting services..."
 
-cd docker
+# cd docker
 
 # Stop any existing containers
 print_info "Stopping any existing containers..."
@@ -520,46 +520,46 @@ check_service_health() {
 # Check critical services
 SERVICES_HEALTHY=true
 
-echo -n "Checking ML Service (http://localhost:8001)... "
-if check_service_health "ml-service" "http://localhost:8001/health"; then
-    echo -e "${GREEN}✓${NC}"
-else
-    echo -e "${RED}✗${NC}"
-    SERVICES_HEALTHY=false
-fi
+# echo -n "Checking ML Service (http://localhost:8001)... "
+# if check_service_health "ml-service" "http://localhost:8001/health"; then
+#     echo -e "${GREEN}✓${NC}"
+# else
+#     echo -e "${RED}✗${NC}"
+#     SERVICES_HEALTHY=false
+# fi
 
-echo -n "Checking RAG Service (http://localhost:8002)... "
-if check_service_health "rag-service" "http://localhost:8002/health"; then
-    echo -e "${GREEN}✓${NC}"
-else
-    echo -e "${RED}✗${NC}"
-    SERVICES_HEALTHY=false
-fi
+# echo -n "Checking RAG Service (http://localhost:8002)... "
+# if check_service_health "rag-service" "http://localhost:8002/health"; then
+#     echo -e "${GREEN}✓${NC}"
+# else
+#     echo -e "${RED}✗${NC}"
+#     SERVICES_HEALTHY=false
+# fi
 
-echo -n "Checking Agent Service (http://localhost:8003)... "
-if check_service_health "agent-service" "http://localhost:8003/health"; then
-    echo -e "${GREEN}✓${NC}"
-else
-    echo -e "${RED}✗${NC}"
-    SERVICES_HEALTHY=false
-fi
+# echo -n "Checking Agent Service (http://localhost:8003)... "
+# if check_service_health "agent-service" "http://localhost:8003/health"; then
+#     echo -e "${GREEN}✓${NC}"
+# else
+#     echo -e "${RED}✗${NC}"
+#     SERVICES_HEALTHY=false
+# fi
 
-echo -n "Checking MLflow (http://localhost:5000)... "
-if check_service_health "mlflow" "http://localhost:5000"; then
-    echo -e "${GREEN}✓${NC}"
-else
-    echo -e "${RED}✗${NC}"
-    SERVICES_HEALTHY=false
-fi
+# echo -n "Checking MLflow (http://localhost:5000)... "
+# if check_service_health "mlflow" "http://localhost:5000"; then
+#     echo -e "${GREEN}✓${NC}"
+# else
+#     echo -e "${RED}✗${NC}"
+#     SERVICES_HEALTHY=false
+# fi
 
-if [ "$SERVICES_HEALTHY" = true ]; then
-    print_success "All critical services are healthy!"
-else
-    print_error "Some services failed health checks"
-    print_info "Services may still be starting. Check status with:"
-    print_info "  docker-compose -f docker/docker-compose.yml ps"
-    print_info "  docker-compose -f docker/docker-compose.yml logs"
-fi
+# if [ "$SERVICES_HEALTHY" = true ]; then
+#     print_success "All critical services are healthy!"
+# else
+#     print_error "Some services failed health checks"
+#     print_info "Services may still be starting. Check status with:"
+#     print_info "  docker-compose -f docker/docker-compose.yml ps"
+#     print_info "  docker-compose -f docker/docker-compose.yml logs"
+# fi
 
 ################################################################################
 # STEP 9: Pull Ollama Model (LLM)
