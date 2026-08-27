@@ -1,0 +1,5 @@
+outs:
+- md5: 4d90a972703ba9c108836e46cc5fe7d7
+  size: 10867
+  hash: md5
+  path: knowledge_base.json
