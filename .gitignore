@@ -40,3 +40,4 @@ mlartifacts/
 
 # DVC
 /models/recommendation_model.pkl.setup_complete
+ecommerce-module-2

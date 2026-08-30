@@ -1,0 +1,5 @@
+outs:
+- md5: 0689365ab3520a8ea72771a6618bf780
+  size: 9601
+  hash: md5
+  path: knowledge_base.csv
